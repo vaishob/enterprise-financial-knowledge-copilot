@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60,
+      "includeFiles": "synthetic_data/corpus.json,evals/config.json,evals/datasets/**,evals/reports/**"
+    }
+  }
+}
