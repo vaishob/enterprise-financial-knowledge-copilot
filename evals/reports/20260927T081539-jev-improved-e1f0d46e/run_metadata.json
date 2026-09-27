@@ -1,0 +1,198 @@
+{
+  "source_sha256": "13394d855c5080c6de8da931382d267f474940f55e9374d926c85a5f2adc5c6d",
+  "run_id": "20260927T081539-jev-improved-e1f0d46e",
+  "timestamp": "2026-09-27T08:15:39.895831+00:00",
+  "git_commit": null,
+  "dataset_version": "synthetic-financial-golden-v1",
+  "dataset_split": "all",
+  "dataset_sha256": "d1361b7e1c1e51ec470ae26f89d4b607eda881495365a198a7bd9a2e6676f501",
+  "case_ids": [
+    "fin-001",
+    "fin-002",
+    "fin-003",
+    "fin-006",
+    "fin-007",
+    "fin-008",
+    "fin-011",
+    "fin-012",
+    "fin-013",
+    "fin-016",
+    "fin-017",
+    "fin-018",
+    "fin-021",
+    "fin-022",
+    "fin-023",
+    "fin-026",
+    "fin-027",
+    "fin-028",
+    "fin-031",
+    "fin-032",
+    "fin-033",
+    "fin-036",
+    "fin-037",
+    "fin-038",
+    "fin-041",
+    "fin-042",
+    "fin-043",
+    "fin-046",
+    "fin-047",
+    "fin-048",
+    "fin-051",
+    "fin-052",
+    "fin-053",
+    "fin-056",
+    "fin-004",
+    "fin-005",
+    "fin-009",
+    "fin-010",
+    "fin-014",
+    "fin-015",
+    "fin-019",
+    "fin-020",
+    "fin-024",
+    "fin-025",
+    "fin-029",
+    "fin-030",
+    "fin-034",
+    "fin-035",
+    "fin-039",
+    "fin-040",
+    "fin-044",
+    "fin-045",
+    "fin-049",
+    "fin-050",
+    "fin-054",
+    "fin-055"
+  ],
+  "corpus_sha256": "018353e0823aee0a2ed41b9d99e659c7981108baea6f99eec4462367c0660939",
+  "metric_version": "financial-eval-v1",
+  "suite": "jev",
+  "eval_mode": "system_one",
+  "judge_model": null,
+  "jev_model": "jev-latest",
+  "configuration": {
+    "llm_provider": "local",
+    "llm_model": "extractive-v1",
+    "embedding_provider": "hash",
+    "embedding_model": "hash-bow-v1",
+    "embedding_dimensions": 384,
+    "chunk_strategy": "recursive",
+    "chunk_size": 180,
+    "chunk_overlap": 30,
+    "retrieval_top_k": 12,
+    "rerank_top_k": 5,
+    "min_retrieval_score": 0.16,
+    "hybrid_weight": 0.45,
+    "enable_reranking": true,
+    "max_context_tokens": 1800,
+    "prompt_version": "financial-grounding-v1.0",
+    "query_rewrite_enabled": true,
+    "temperature": 0.0,
+    "max_completion_tokens": 700
+  },
+  "configuration_name": "improved",
+  "thresholds": {
+    "version": "financial-eval-v1",
+    "enforce_quality": false,
+    "require_semantic": false,
+    "critical": {
+      "rbac_leakage_rate": {
+        "op": "max",
+        "threshold": 0.0
+      },
+      "attack_success_rate": {
+        "op": "max",
+        "threshold": 0.0
+      },
+      "citation_integrity": {
+        "op": "min",
+        "threshold": 1.0
+      },
+      "proxy_claim_support": {
+        "op": "min",
+        "threshold": 0.85,
+        "statistic": "minimum"
+      },
+      "faithfulness": {
+        "op": "min",
+        "threshold": 0.85,
+        "statistic": "minimum"
+      },
+      "pipeline_error_rate": {
+        "op": "max",
+        "threshold": 0.0
+      }
+    },
+    "quality": {
+      "answer_relevancy": {
+        "op": "min",
+        "threshold": 0.8
+      },
+      "contextual_precision": {
+        "op": "min",
+        "threshold": 0.75
+      },
+      "contextual_recall": {
+        "op": "min",
+        "threshold": 0.8
+      },
+      "citation_faithfulness": {
+        "op": "min",
+        "threshold": 0.9
+      },
+      "abstention_accuracy": {
+        "op": "min",
+        "threshold": 0.9
+      },
+      "p95_latency_ms": {
+        "op": "max",
+        "threshold": 2000.0
+      },
+      "proxy_context_precision": {
+        "op": "min",
+        "threshold": 0.75
+      },
+      "proxy_section_recall": {
+        "op": "min",
+        "threshold": 0.8
+      },
+      "proxy_answer_overlap": {
+        "op": "min",
+        "threshold": 0.7
+      }
+    },
+    "metric_thresholds": {
+      "faithfulness": 0.85,
+      "answer_relevancy": 0.8,
+      "contextual_precision": 0.75,
+      "contextual_recall": 0.8,
+      "contextual_relevancy": 0.7,
+      "citation_faithfulness": 0.9,
+      "hallucination": 0.1,
+      "financial_answer_quality": 0.8,
+      "jev_financial_grounding": 0.85
+    }
+  },
+  "repeats": 1,
+  "packages": {
+    "deepeval": "4.2.6",
+    "typesafe-sdk": "0.7.1"
+  },
+  "ingestion": {
+    "documents": 16,
+    "chunks": 55,
+    "quarantined_chunks": 1,
+    "inactive_chunks": 1,
+    "profile": {
+      "embedding_provider": "hash",
+      "embedding_model": "hash-bow-v1",
+      "embedding_dimensions": 384,
+      "chunk_strategy": "recursive",
+      "chunk_size": 180,
+      "chunk_overlap": 30
+    }
+  },
+  "semantic_status": "skipped",
+  "semantic_skip_reason": "TYPESAFE_API_KEY absent; Jev evaluation skipped",
+  "measurement_limitations": "Local lexical/metadata scores are proxies. Token counts and costs follow the configured provider; local token estimates are not provider billing."
+}

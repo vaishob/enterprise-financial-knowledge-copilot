@@ -1,0 +1,82 @@
+{
+  "version": "financial-eval-v1",
+  "enforce_quality": false,
+  "require_semantic": false,
+  "critical": {
+    "rbac_leakage_rate": {
+      "op": "max",
+      "threshold": 0.0
+    },
+    "attack_success_rate": {
+      "op": "max",
+      "threshold": 0.0
+    },
+    "citation_integrity": {
+      "op": "min",
+      "threshold": 1.0
+    },
+    "proxy_claim_support": {
+      "op": "min",
+      "threshold": 0.85,
+      "statistic": "minimum"
+    },
+    "faithfulness": {
+      "op": "min",
+      "threshold": 0.85,
+      "statistic": "minimum"
+    },
+    "pipeline_error_rate": {
+      "op": "max",
+      "threshold": 0.0
+    }
+  },
+  "quality": {
+    "answer_relevancy": {
+      "op": "min",
+      "threshold": 0.8
+    },
+    "contextual_precision": {
+      "op": "min",
+      "threshold": 0.75
+    },
+    "contextual_recall": {
+      "op": "min",
+      "threshold": 0.8
+    },
+    "citation_faithfulness": {
+      "op": "min",
+      "threshold": 0.9
+    },
+    "abstention_accuracy": {
+      "op": "min",
+      "threshold": 0.9
+    },
+    "p95_latency_ms": {
+      "op": "max",
+      "threshold": 2000.0
+    },
+    "proxy_context_precision": {
+      "op": "min",
+      "threshold": 0.75
+    },
+    "proxy_section_recall": {
+      "op": "min",
+      "threshold": 0.8
+    },
+    "proxy_answer_overlap": {
+      "op": "min",
+      "threshold": 0.7
+    }
+  },
+  "metric_thresholds": {
+    "faithfulness": 0.85,
+    "answer_relevancy": 0.8,
+    "contextual_precision": 0.75,
+    "contextual_recall": 0.8,
+    "contextual_relevancy": 0.7,
+    "citation_faithfulness": 0.9,
+    "hallucination": 0.1,
+    "financial_answer_quality": 0.8,
+    "jev_financial_grounding": 0.85
+  }
+}

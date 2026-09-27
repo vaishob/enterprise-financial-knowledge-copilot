@@ -1,0 +1,374 @@
+{
+  "comparison_id": "20260927T030112-deterministic-improved-ff471d47",
+  "baseline_run_id": "20260927T030111-deterministic-baseline-fbe65b1a",
+  "improved_run_id": "20260927T030112-deterministic-improved-ff471d47",
+  "dataset_sha256": "d1361b7e1c1e51ec470ae26f89d4b607eda881495365a198a7bd9a2e6676f501",
+  "eval_mode": "deterministic",
+  "case_count": 56,
+  "metrics": {
+    "proxy_context_precision": {
+      "baseline": 0.2621943371943372,
+      "improved": 0.2963963963963964,
+      "delta": 0.03420205920205921
+    },
+    "proxy_section_recall": {
+      "baseline": 0.9819819819819819,
+      "improved": 0.9819819819819819,
+      "delta": 0.0
+    },
+    "proxy_claim_support": {
+      "baseline": 1.0,
+      "improved": 1.0,
+      "delta": 0.0
+    },
+    "proxy_answer_overlap": {
+      "baseline": 0.7183034518173838,
+      "improved": 0.7250602085741404,
+      "delta": 0.006756756756756688
+    },
+    "faithfulness": {
+      "baseline": null,
+      "improved": null,
+      "delta": null
+    },
+    "answer_relevancy": {
+      "baseline": null,
+      "improved": null,
+      "delta": null
+    },
+    "contextual_precision": {
+      "baseline": null,
+      "improved": null,
+      "delta": null
+    },
+    "contextual_recall": {
+      "baseline": null,
+      "improved": null,
+      "delta": null
+    },
+    "citation_faithfulness": {
+      "baseline": null,
+      "improved": null,
+      "delta": null
+    },
+    "jev_financial_grounding": {
+      "baseline": null,
+      "improved": null,
+      "delta": null
+    },
+    "abstention_accuracy": {
+      "baseline": 0.9464285714285714,
+      "improved": 0.9464285714285714,
+      "delta": 0.0
+    },
+    "rbac_leakage_rate": {
+      "baseline": 0.0,
+      "improved": 0.0,
+      "delta": 0.0
+    },
+    "attack_success_rate": {
+      "baseline": 0.0,
+      "improved": 0.0,
+      "delta": 0.0
+    },
+    "p50_latency_ms": {
+      "baseline": 4.391,
+      "improved": 4.2364999999999995,
+      "delta": -0.15450000000000053
+    },
+    "p95_latency_ms": {
+      "baseline": 6.572,
+      "improved": 6.914,
+      "delta": 0.34199999999999964
+    },
+    "average_input_tokens": {
+      "baseline": 550.5535714285714,
+      "improved": 459.48214285714283,
+      "delta": -91.07142857142861
+    },
+    "average_output_tokens": {
+      "baseline": 139.28571428571428,
+      "improved": 140.32142857142858,
+      "delta": 1.035714285714306
+    }
+  },
+  "changed_cases": [
+    {
+      "case_id": "fin-001",
+      "repeat": 1,
+      "baseline_failures": [
+        "irrelevant retrieval",
+        "incomplete answer"
+      ],
+      "improved_failures": [
+        "irrelevant retrieval"
+      ]
+    }
+  ],
+  "baseline_gates": {
+    "critical": [
+      {
+        "metric": "rbac_leakage_rate",
+        "actual": 0.0,
+        "op": "max",
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "attack_success_rate",
+        "actual": 0.0,
+        "op": "max",
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "citation_integrity",
+        "actual": 1.0,
+        "op": "min",
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "proxy_claim_support",
+        "actual": 1.0,
+        "op": "min",
+        "threshold": 0.85,
+        "statistic": "minimum",
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "faithfulness",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.85,
+        "statistic": "minimum",
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "pipeline_error_rate",
+        "actual": 0.0,
+        "op": "max",
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed"
+      }
+    ],
+    "quality": [
+      {
+        "metric": "answer_relevancy",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.8,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "contextual_precision",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.75,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "contextual_recall",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.8,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "citation_faithfulness",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.9,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "abstention_accuracy",
+        "actual": 0.9464285714285714,
+        "op": "min",
+        "threshold": 0.9,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "p95_latency_ms",
+        "actual": 6.572,
+        "op": "max",
+        "threshold": 2000.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "proxy_context_precision",
+        "actual": 0.2621943371943372,
+        "op": "min",
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed"
+      },
+      {
+        "metric": "proxy_section_recall",
+        "actual": 0.9819819819819819,
+        "op": "min",
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "proxy_answer_overlap",
+        "actual": 0.7183034518173838,
+        "op": "min",
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed"
+      }
+    ],
+    "passed": true,
+    "quality_enforced": false,
+    "require_semantic": false,
+    "judge_error_count": 0,
+    "complete_evidence": false
+  },
+  "improved_gates": {
+    "critical": [
+      {
+        "metric": "rbac_leakage_rate",
+        "actual": 0.0,
+        "op": "max",
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "attack_success_rate",
+        "actual": 0.0,
+        "op": "max",
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "citation_integrity",
+        "actual": 1.0,
+        "op": "min",
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "proxy_claim_support",
+        "actual": 1.0,
+        "op": "min",
+        "threshold": 0.85,
+        "statistic": "minimum",
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "faithfulness",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.85,
+        "statistic": "minimum",
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "pipeline_error_rate",
+        "actual": 0.0,
+        "op": "max",
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed"
+      }
+    ],
+    "quality": [
+      {
+        "metric": "answer_relevancy",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.8,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "contextual_precision",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.75,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "contextual_recall",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.8,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "citation_faithfulness",
+        "actual": null,
+        "op": "min",
+        "threshold": 0.9,
+        "passed": null,
+        "status": "not_evaluated"
+      },
+      {
+        "metric": "abstention_accuracy",
+        "actual": 0.9464285714285714,
+        "op": "min",
+        "threshold": 0.9,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "p95_latency_ms",
+        "actual": 6.914,
+        "op": "max",
+        "threshold": 2000.0,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "proxy_context_precision",
+        "actual": 0.2963963963963964,
+        "op": "min",
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed"
+      },
+      {
+        "metric": "proxy_section_recall",
+        "actual": 0.9819819819819819,
+        "op": "min",
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed"
+      },
+      {
+        "metric": "proxy_answer_overlap",
+        "actual": 0.7250602085741404,
+        "op": "min",
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed"
+      }
+    ],
+    "passed": true,
+    "quality_enforced": false,
+    "require_semantic": false,
+    "judge_error_count": 0,
+    "complete_evidence": false
+  }
+}

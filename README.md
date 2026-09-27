@@ -129,4 +129,3 @@ Make targets include setup, dev, ingest, test, eval, eval-jev, eval-hybrid, secu
 The offline generator is extractive; lexical retrieval may select authentic but incomplete or irrelevant evidence. Known attack tests do not prove comprehensive injection safety. Demo redaction is not DLP, application filtering is not database RLS, and signed tokens are not a complete identity platform. Provider, database, container and judge claims are limited to executed verification.
 
 Next priorities: domain-expert labels and a fresh blind holdout; real embedding/reranker/provider experiments and calibrated semantic gates; enterprise OIDC, least privilege/RLS, immutable audits and quotas; approved document workflows and schema migrations; load/chaos tests and measured cost budgets. Conversational and agentic extensions should follow measured single-turn quality.
-

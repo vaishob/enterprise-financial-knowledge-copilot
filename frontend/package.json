@@ -1,0 +1,16 @@
+{
+  "name": "enterprise-financial-knowledge-copilot-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "next typegen && tsc --noEmit",
+    "verify": "npm run lint && npm run typecheck && npm run build"
+  },
+  "engines": { "node": ">=22.0.0" },
+  "dependencies": { "next": "16.3.6", "react": "19.2.4", "react-dom": "19.2.4" },
+  "devDependencies": { "@types/node": "^24.0.0", "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0", "eslint": "^9.39.0", "eslint-config-next": "16.3.6", "typescript": "^5.9.0" }
+}

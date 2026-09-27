@@ -1,0 +1,129 @@
+{
+  "timestamp": "2026-09-27T08:15:59.185173+00:00",
+  "checks": [
+    {
+      "check": "python lint",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "backend",
+        "evals",
+        "scripts"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "python typecheck",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "backend"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "tests",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "pytest"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "backend package build",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "build",
+        "--no-isolation"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "source credential scan",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.scan_secrets"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "deterministic regression gates",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "evals.runners.run",
+        "--suite",
+        "deterministic",
+        "--split",
+        "regression"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "DeepEval run",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "evals.runners.run",
+        "--suite",
+        "deepeval"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "Jev run",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\venv\\Scripts\\python.exe",
+        "-m",
+        "evals.runners.run",
+        "--suite",
+        "jev"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "frontend lint",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "frontend typecheck",
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "frontend build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "Docker config",
+      "command": [
+        "C:\\Users\\VAIS0\\Documents\\Codex\\2026-09-26\\remotion-plugin-remotion-openai-curated-remote\\work\\docker-compose.EXE",
+        "config",
+        "--quiet"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "docker_status": "config validated; engine not inferred",
+  "semantic_note": "Successful optional commands may contain skipped metrics; inspect their run reports."
+}
