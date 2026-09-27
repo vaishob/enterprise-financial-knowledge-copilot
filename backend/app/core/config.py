@@ -9,7 +9,10 @@ ROLES = frozenset({"analyst", "treasury", "risk_manager", "compliance", "admin"}
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=str(ROOT / ".env"), extra="ignore", case_sensitive=False)
+    # Platforms such as Vercel may detect keys from .env.example and inject
+    # empty values. Treat those as unset so the safe demo defaults apply.
+    model_config = SettingsConfigDict(env_file=str(ROOT / ".env"), extra="ignore", case_sensitive=False,
+                                      env_ignore_empty=True)
 
     app_env: Literal["demo", "development", "test", "production"] = "demo"
     database_url: str = f"sqlite:///{(ROOT / 'data' / 'copilot.db').as_posix()}"
