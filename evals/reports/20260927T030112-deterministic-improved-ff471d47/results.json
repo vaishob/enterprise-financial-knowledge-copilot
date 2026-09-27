@@ -5837,10 +5837,743 @@
       {
         "chunk_id": "chk-0cf23691ec7c15bc7469d54b",
         "document_id": "operational-risk",
-        "document_title":        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A Severity-1 operational incident involves a critical service outage exceeding 30 minutes or suspected unauthorized disclosure of client data. Employees must notify the Operational Risk Duty Manager within 15 minutes of identifying a Severity-1 incident.",
+        "vector_score": 0.10585122480499264,
+        "keyword_score": 0.2983747267571636,
+        "score": 0.21173915087868667,
+        "reranker_score": 0.2386490734339574
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "3.1",
+        "chunk_id": "chk-af6374477520c7c24ed91a87",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 1,
+        "excerpt": "Business continuity exercises for critical services must occur twice each calendar year."
+      },
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "3.1",
+        "chunk_id": "chk-af6374477520c7c24ed91a87",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 2,
+        "excerpt": "The service owner records test outcomes and remediation owners within ten business days after an exercise."
+      },
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-51d2f14b94f3b76828f3d9e7",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 3,
+        "excerpt": "The Business Continuity Manager coordinates restoration exercises."
+      }
+    ],
+    "latency_ms": 4.085,
+    "timings": {
+      "preprocessing_ms": 0.021,
+      "retrieval_ms": 3.178,
+      "reranking_ms": 0.12,
+      "context_ms": 0.031,
+      "generation_ms": 0.251,
+      "citation_verification_ms": 0.059,
+      "guardrails_ms": 0.124,
+      "request_ms": 4.073
+    },
+    "token_usage": {
+      "input_tokens": 746,
+      "output_tokens": 167,
+      "total_tokens": 913,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "e2d74d44-f54e-4334-9e11-7fef4d38a056",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": 0.2,
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": 1.0,
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": 1.0,
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "irrelevant retrieval"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-033",
+    "category": "unanswerable",
+    "input": "What is the current EUR to USD market exchange rate?",
+    "expected_output": "Abstain: live exchange rates are absent from the authorized corpus.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "analyst",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-bbc122e957cb95d043c6da7b",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "Employee Expense Policy version 2.0 took effect on 1 February 2026. The domestic meal limit increased from USD 65 to USD 75. The international meal limit remains USD 110.",
+        "vector_score": 0.20225995873897265,
+        "keyword_score": 0.39923956434360186,
+        "score": 0.3105987418215187,
+        "reranker_score": 0.20764968545537968
+      },
+      {
+        "chunk_id": "chk-ce7edf8a50e8832a81578e1d",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "The domestic business travel meal reimbursement limit is USD 75 per employee per day, excluding tax. Alcohol is not reimbursable. An itemized receipt is required for every expense claim above USD 25.",
+        "vector_score": 0.1556997888323046,
+        "keyword_score": 0.39923956434360186,
+        "score": 0.28964666536351813,
+        "reranker_score": 0.20241166634087954
+      },
+      {
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
         "document_id": "trade-finance",
         "document_title": "Trade Finance Procedures",
         "document_version": "2.0",
+        "source": "synthetic://policies/trade-finance",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance. The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds.",
+        "vector_score": 0.14142135623730953,
+        "keyword_score": 0.39923956434360186,
+        "score": 0.2832213706957703,
+        "reranker_score": 0.20080534267394257
+      },
+      {
+        "chunk_id": "chk-99b80ab71ef581db7d9e1faa",
+        "document_id": "expense-corporate-card",
+        "document_title": "Corporate Card Operating Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/expense-corporate-card",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "The corporate card daily spending limit is USD 2,500. A corporate card spending limit is an authorization limit and does not change expense reimbursement limits. Domestic meal reimbursement remains USD 75 per employee per day under the Employee Expense Policy.",
+        "vector_score": 0.11009637651263607,
+        "keyword_score": 0.39923956434360186,
+        "score": 0.26912512981966724,
+        "reranker_score": 0.19728128245491683
+      },
+      {
+        "chunk_id": "chk-d2af48de9899ad739714bec8",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "2.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "The international business travel meal reimbursement limit is USD 110 per employee per day, excluding tax. Domestic and international meal limits must not be combined for the same travel day.",
+        "vector_score": 0.06819943394704736,
+        "keyword_score": 0.39923956434360186,
+        "score": 0.2502715056651523,
+        "reranker_score": 0.1925678764162881
+      }
+    ],
+    "citations": [],
+    "latency_ms": 3.686,
+    "timings": {
+      "preprocessing_ms": 0.019,
+      "retrieval_ms": 3.147,
+      "reranking_ms": 0.132,
+      "context_ms": 0.032,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.056,
+      "request_ms": 3.675
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "bc5e4026-e1a5-4d68-8da1-f9ec71baf241",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-036",
+    "category": "unanswerable",
+    "input": "Which equity will have the highest return next month?",
+    "expected_output": "Abstain: investment forecasts are absent.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "analyst",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-37005672c958cfcabab40927",
+        "document_id": "access-control",
+        "document_title": "Access Control Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/access-control",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Privileged administrative access requires approval by the system owner and Information Security Officer. Emergency access expires after four hours and is reviewed the next business day.",
+        "vector_score": 0.1754116038614059,
+        "keyword_score": 0.46754029984700235,
+        "score": 0.336082386653484,
+        "reranker_score": 0.214020596663371
+      },
+      {
+        "chunk_id": "chk-1d01b8df59b098ac635207ab",
+        "document_id": "payment-operations",
+        "document_title": "Payment Operations Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/payment-operations",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "The domestic payment submission cut-off is 16:00 Singapore time on business days. Payments received after the cut-off are processed on the next business day.",
+        "vector_score": 0.15569978883230462,
+        "keyword_score": 0.46754029984700235,
+        "score": 0.3272120698903884,
+        "reranker_score": 0.2118030174725971
+      }
+    ],
+    "citations": [],
+    "latency_ms": 5.31,
+    "timings": {
+      "preprocessing_ms": 0.019,
+      "retrieval_ms": 4.872,
+      "reranking_ms": 0.066,
+      "context_ms": 0.021,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.034,
+      "request_ms": 5.297
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "aa70f7d0-84c3-4cf4-9194-89c4b47d3e18",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-037",
+    "category": "unanswerable",
+    "input": "What is the approved quantum custody protocol for lunar assets?",
+    "expected_output": "Abstain: this subject is absent.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "analyst",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-999baf932995e3821dc8e8f0",
+        "document_id": "payment-operations",
+        "document_title": "Payment Operations Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/payment-operations",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Manual payment instructions above USD 100,000 require dual approval by two distinct authorized Payment Operations Officers. Treasury counterparty exposure approval does not replace payment dual approval.",
+        "vector_score": 0.16823164622761327,
+        "keyword_score": 0.34710745749720107,
+        "score": 0.2666133424258866,
+        "reranker_score": 0.17498666893980497
+      },
+      {
+        "chunk_id": "chk-bd3ef0afaf538bda2b4418b9",
+        "document_id": "information-security",
+        "document_title": "Information Security Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/information-security",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Confidential information must use approved encrypted storage and TLS 1.2 or later in transit. Personal email accounts and public file-sharing sites are not approved channels for client information.",
+        "vector_score": 0.16666666666666669,
+        "keyword_score": 0.34710745749720107,
+        "score": 0.2659091016234606,
+        "reranker_score": 0.1748106087391985
+      },
+      {
+        "chunk_id": "chk-58b05ad1561fda50757b85ca",
+        "document_id": "operational-risk",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "For a Level-2 treasury exposure above USD 10,000,000, notify the Compliance Duty Officer before execution and create an operational risk incident record within one business day. The incident record supplements the Treasury Risk Manager approval; it does not replace pre-execution approval.",
+        "vector_score": 0.14962640041614494,
+        "keyword_score": 0.34710745749720107,
+        "score": 0.25824098181072586,
+        "reranker_score": 0.1728935787860148
+      },
+      {
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
+        "document_version": "2.0",
+        "source": "synthetic://policies/trade-finance",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance. The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds.",
+        "vector_score": 0.12909944487358058,
+        "keyword_score": 0.34710745749720107,
+        "score": 0.24900385181657186,
+        "reranker_score": 0.1705842962874763
+      },
+      {
+        "chunk_id": "chk-920e9d59a63ae162f87c7a5f",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "3.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
           "compliance",
           "risk_manager",
           "treasury"
@@ -6432,7 +7165,9 @@
           "treasury"
         ],
         "effective_date": "2026-01-01",
-        "text": "Multi-factor authentication is required for all remote access to internal systems. Privileged19968364540191227,
+        "text": "Multi-factor authentication is required for all remote access to internal systems. Privileged administrative access requires a phishing-resistant security key. The Information Security Officer owns remote-access exceptions.",
+        "vector_score": 0.25,
+        "keyword_score": 0.19968364540191227,
         "score": 0.22232600497105176,
         "reranker_score": 0.24308150124276293
       },
@@ -7597,7 +8332,18 @@
         "threshold": 1.0,
         "passed": true,
         "status": "passed",
-        "reason": "Actual abstention compe": "deterministic",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
         "confidence": null,
         "score_breakdown": null
       },
@@ -7854,7 +8600,760 @@
         "chunk_id": "chk-12f26366254b987dcde1f7a6",
         "document_id": "operational-risk",
         "document_title": "Operational Risk Escalation Procedure",
-        "document_ve9651304,
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.3",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A Severity-2 operational incident affects a non-critical service without suspected client data disclosure. Notify the Operational Risk Duty Manager within four business hours. Severity-2 incident reporting is distinct from Level-2 treasury exposure escalation.",
+        "vector_score": 0.20412414523193148,
+        "keyword_score": 0.3345465448231161,
+        "score": 0.27585646500708305,
+        "reranker_score": 0.2939641162517708
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "4.1",
+        "chunk_id": "chk-19a57ae3e2412464b3a61814",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 1,
+        "excerpt": "A critical service outage exceeding 30 minutes requires Severity-1 operational incident escalation, even when the two-hour recovery time objective has not yet been breached."
+      },
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-51d2f14b94f3b76828f3d9e7",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 2,
+        "excerpt": "The critical payments service recovery time objective is two hours."
+      }
+    ],
+    "latency_ms": 4.163,
+    "timings": {
+      "preprocessing_ms": 0.029,
+      "retrieval_ms": 3.26,
+      "reranking_ms": 0.103,
+      "context_ms": 0.027,
+      "generation_ms": 0.265,
+      "citation_verification_ms": 0.052,
+      "guardrails_ms": 0.118,
+      "request_ms": 4.15
+    },
+    "token_usage": {
+      "input_tokens": 669,
+      "output_tokens": 147,
+      "total_tokens": 816,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "fe0bdaaa-9e77-4249-9c81-6ead5a46ea29",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": 0.25,
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": 1.0,
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": 0.8947368421052632,
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "irrelevant retrieval"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-004",
+    "category": "direct_factual",
+    "input": "Who approves cross-border client-data transfers?",
+    "expected_output": "The Data Protection Officer approves the transfer before data leaves the originating jurisdiction.",
+    "actual_output": "The Data Protection Officer approves cross-border client-data transfers before data leaves the originating jurisdiction. [1]\n\nApproved client-data transfers require documented business purpose, recipient authorization and encryption. [2]",
+    "user_role": "analyst",
+    "should_abstain": false,
+    "abstained": false,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-90d92d41f690384a2668065c",
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/client-data",
+        "section": "3.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Approved client-data transfers require documented business purpose, recipient authorization and encryption. The Data Protection Officer approves cross-border client-data transfers before data leaves the originating jurisdiction.",
+        "vector_score": 0.7570332986102253,
+        "keyword_score": 1.0,
+        "score": 0.8906649843746015,
+        "reranker_score": 0.9059995794269837
+      },
+      {
+        "chunk_id": "chk-927bb06799cae2d818b70b78",
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/client-data",
+        "section": "3.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Client account identifiers, personal email addresses and telephone numbers are classified as confidential client data. Use synthetic or irreversibly anonymized data in demonstrations. Mask client account identifiers in application logs.",
+        "vector_score": 0.4001633653325206,
+        "keyword_score": 0.2670992543066694,
+        "score": 0.3269781042683025,
+        "reranker_score": 0.3317445260670756
+      },
+      {
+        "chunk_id": "chk-bd3ef0afaf538bda2b4418b9",
+        "document_id": "information-security",
+        "document_title": "Information Security Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/information-security",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Confidential information must use approved encrypted storage and TLS 1.2 or later in transit. Personal email accounts and public file-sharing sites are not approved channels for client information.",
+        "vector_score": 0.25,
+        "keyword_score": 0.271919974550121,
+        "score": 0.2620559860025666,
+        "reranker_score": 0.28218066316730833
+      },
+      {
+        "chunk_id": "chk-0cf23691ec7c15bc7469d54b",
+        "document_id": "operational-risk",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A Severity-1 operational incident involves a critical service outage exceeding 30 minutes or suspected unauthorized disclosure of client data. Employees must notify the Operational Risk Duty Manager within 15 minutes of identifying a Severity-1 incident.",
+        "vector_score": 0.1143323900950059,
+        "keyword_score": 0.2670992543066694,
+        "score": 0.19835416541142084,
+        "reranker_score": 0.2662552080195219
+      },
+      {
+        "chunk_id": "chk-12f26366254b987dcde1f7a6",
+        "document_id": "operational-risk",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.3",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A Severity-2 operational incident affects a non-critical service without suspected client data disclosure. Notify the Operational Risk Duty Manager within four business hours. Severity-2 incident reporting is distinct from Level-2 treasury exposure escalation.",
+        "vector_score": 0.09622504486493762,
+        "keyword_score": 0.2670992543066694,
+        "score": 0.1902058600578901,
+        "reranker_score": 0.2642181316811392
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "section": "3.2",
+        "chunk_id": "chk-90d92d41f690384a2668065c",
+        "source": "synthetic://policies/client-data",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 1,
+        "excerpt": "The Data Protection Officer approves cross-border client-data transfers before data leaves the originating jurisdiction."
+      },
+      {
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "section": "3.2",
+        "chunk_id": "chk-90d92d41f690384a2668065c",
+        "source": "synthetic://policies/client-data",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 2,
+        "excerpt": "Approved client-data transfers require documented business purpose, recipient authorization and encryption."
+      }
+    ],
+    "latency_ms": 4.085,
+    "timings": {
+      "preprocessing_ms": 0.018,
+      "retrieval_ms": 3.126,
+      "reranking_ms": 0.15,
+      "context_ms": 0.032,
+      "generation_ms": 0.266,
+      "citation_verification_ms": 0.053,
+      "guardrails_ms": 0.148,
+      "request_ms": 4.073
+    },
+    "token_usage": {
+      "input_tokens": 762,
+      "output_tokens": 133,
+      "total_tokens": 895,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "5a4910a3-37f4-4516-878e-10058ccf4f51",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": 0.2,
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": 1.0,
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": 0.8888888888888888,
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "irrelevant retrieval"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-005",
+    "category": "direct_factual",
+    "input": "Who may clear an unresolved sanctions screening match before account opening?",
+    "expected_output": "The Sanctions Compliance Officer must clear the match; unresolved matches block account opening.",
+    "actual_output": "An unresolved sanctions screening match blocks account opening until the Sanctions Compliance Officer clears the match. [1]\n\nBefore opening a client account, the KYC Analyst verifies identity, beneficial ownership and sanctions screening. [2]",
+    "user_role": "compliance",
+    "should_abstain": false,
+    "abstained": false,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-7cae7db73eb4c69123be2109",
+        "document_id": "aml-kyc",
+        "document_title": "AML/KYC Operations Guide",
+        "document_version": "2.0",
+        "source": "synthetic://policies/aml-kyc",
+        "section": "2.1",
+        "page": null,
+        "classification": "restricted",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Before opening a client account, the KYC Analyst verifies identity, beneficial ownership and sanctions screening. An unresolved sanctions screening match blocks account opening until the Sanctions Compliance Officer clears the match.",
+        "vector_score": 0.6880329612324521,
+        "keyword_score": 1.0,
+        "score": 0.8596148325546035,
+        "reranker_score": 0.8649037081386509
+      },
+      {
+        "chunk_id": "chk-a7964af3b7acae6109302afc",
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
+        "document_version": "2.0",
+        "source": "synthetic://policies/trade-finance",
+        "section": "4.3",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Every letter of credit beneficiary must pass sanctions screening before issuance, regardless of transaction amount. Unresolved matches are referred to the Sanctions Compliance Officer and issuance is paused.",
+        "vector_score": 0.30237157840738177,
+        "keyword_score": 0.4225729619159438,
+        "score": 0.3684823393370909,
+        "reranker_score": 0.3706920134057013
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "aml-kyc",
+        "document_title": "AML/KYC Operations Guide",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-7cae7db73eb4c69123be2109",
+        "source": "synthetic://policies/aml-kyc",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager"
+        ],
+        "citation_id": 1,
+        "excerpt": "An unresolved sanctions screening match blocks account opening until the Sanctions Compliance Officer clears the match."
+      },
+      {
+        "document_id": "aml-kyc",
+        "document_title": "AML/KYC Operations Guide",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-7cae7db73eb4c69123be2109",
+        "source": "synthetic://policies/aml-kyc",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager"
+        ],
+        "citation_id": 2,
+        "excerpt": "Before opening a client account, the KYC Analyst verifies identity, beneficial ownership and sanctions screening."
+      }
+    ],
+    "latency_ms": 5.177,
+    "timings": {
+      "preprocessing_ms": 0.023,
+      "retrieval_ms": 4.521,
+      "reranking_ms": 0.052,
+      "context_ms": 0.016,
+      "generation_ms": 0.153,
+      "citation_verification_ms": 0.052,
+      "guardrails_ms": 0.064,
+      "request_ms": 5.164
+    },
+    "token_usage": {
+      "input_tokens": 476,
+      "output_tokens": 135,
+      "total_tokens": 611,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "feb8a7d0-5440-4fc6-91cf-138b617a3ea1",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": 0.5,
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": 1.0,
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": 0.7,
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "irrelevant retrieval"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-009",
+    "category": "direct_factual",
+    "input": "Who coordinates critical payments restoration exercises?",
+    "expected_output": "The Business Continuity Manager coordinates restoration exercises.",
+    "actual_output": "The Business Continuity Manager coordinates restoration exercises. [1]\n\nThe critical payments service recovery time objective is two hours. [2]\n\nBusiness continuity exercises for critical services must occur twice each calendar year. [3]",
+    "user_role": "analyst",
+    "should_abstain": false,
+    "abstained": false,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-51d2f14b94f3b76828f3d9e7",
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/business-continuity",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "The critical payments service recovery time objective is two hours. Its recovery point objective is 15 minutes. The Business Continuity Manager coordinates restoration exercises.",
+        "vector_score": 0.41522739926869984,
+        "keyword_score": 1.0,
+        "score": 0.736852329670915,
+        "reranker_score": 0.8342130824177287
+      },
+      {
+        "chunk_id": "chk-af6374477520c7c24ed91a87",
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/business-continuity",
+        "section": "3.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Business continuity exercises for critical services must occur twice each calendar year. The service owner records test outcomes and remediation owners within ten business days after an exercise.",
+        "vector_score": 0.22360679774997896,
+        "keyword_score": 0.36202736653814743,
+        "score": 0.29973811058347166,
+        "reranker_score": 0.33493452764586795
+      },
+      {
+        "chunk_id": "chk-999baf932995e3821dc8e8f0",
+        "document_id": "payment-operations",
+        "document_title": "Payment Operations Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/payment-operations",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Manual payment instructions above USD 100,000 require dual approval by two distinct authorized Payment Operations Officers. Treasury counterparty exposure approval does not replace payment dual approval.",
+        "vector_score": 0.2457180467335805,
+        "keyword_score": 0.17983121679651304,
         "score": 0.20948029026819343,
         "reranker_score": 0.20237007256704836
       },
@@ -8268,7 +9767,314 @@
         "threshold": 0.85,
         "passed": true,
         "status": "passed",
-        "reason": "Exact normalized sentence containment in context; extractive support proxy, not seman 0.0,
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": 1.0,
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "irrelevant retrieval"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-014",
+    "category": "multi_chunk",
+    "input": "What is the domestic meal limit and when must expense claims be submitted?",
+    "expected_output": "The domestic meal limit is USD 75 per employee per day excluding tax; claims are due within 30 calendar days after the expense date.",
+    "actual_output": "The domestic business travel meal reimbursement limit is USD 75 per employee per day, excluding tax. [1]\n\nAn exception to the meal limit requires Finance Controller approval before the expense is incurred. [2]\n\nThe domestic meal limit increased from USD 65 to USD 75. [3]\n\nDomestic meal reimbursement remains USD 75 per employee per day under the Employee Expense Policy. [4]\n\nDomestic and international meal limits must not be combined for the same travel day. [5]",
+    "user_role": "analyst",
+    "should_abstain": false,
+    "abstained": false,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-ce7edf8a50e8832a81578e1d",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "The domestic business travel meal reimbursement limit is USD 75 per employee per day, excluding tax. Alcohol is not reimbursable. An itemized receipt is required for every expense claim above USD 25.",
+        "vector_score": 0.4264014327112209,
+        "keyword_score": 0.9378912292164334,
+        "score": 0.7077208207890878,
+        "reranker_score": 0.7352635385306054
+      },
+      {
+        "chunk_id": "chk-920e9d59a63ae162f87c7a5f",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "3.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "Employees must submit expense claims within 30 calendar days after the expense date. The Line Manager approves ordinary claims. An exception to the meal limit requires Finance Controller approval before the expense is incurred.",
+        "vector_score": 0.49805824509175234,
+        "keyword_score": 0.7579546681426661,
+        "score": 0.6410012777697549,
+        "reranker_score": 0.6102503194424388
+      },
+      {
+        "chunk_id": "chk-bbc122e957cb95d043c6da7b",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "Employee Expense Policy version 2.0 took effect on 1 February 2026. The domestic meal limit increased from USD 65 to USD 75. The international meal limit remains USD 110.",
+        "vector_score": 0.492365963917331,
+        "keyword_score": 0.7197462442950688,
+        "score": 0.6174251181250868,
+        "reranker_score": 0.6043562795312718
+      },
+      {
+        "chunk_id": "chk-99b80ab71ef581db7d9e1faa",
+        "document_id": "expense-corporate-card",
+        "document_title": "Corporate Card Operating Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/expense-corporate-card",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "The corporate card daily spending limit is USD 2,500. A corporate card spending limit is an authorization limit and does not change expense reimbursement limits. Domestic meal reimbursement remains USD 75 per employee per day under the Employee Expense Policy.",
+        "vector_score": 0.40201512610368484,
+        "keyword_score": 0.7197462442950688,
+        "score": 0.5767672411089461,
+        "reranker_score": 0.5775251436105698
+      },
+      {
+        "chunk_id": "chk-d2af48de9899ad739714bec8",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "2.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "The international business travel meal reimbursement limit is USD 110 per employee per day, excluding tax. Domestic and international meal limits must not be combined for the same travel day.",
+        "vector_score": 0.49805824509175234,
+        "keyword_score": 0.7197462442950688,
+        "score": 0.6199866446535764,
+        "reranker_score": 0.4966633278300608
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-ce7edf8a50e8832a81578e1d",
+        "source": "synthetic://policies/employee-expense",
+        "effective_date": "2026-02-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 1,
+        "excerpt": "The domestic business travel meal reimbursement limit is USD 75 per employee per day, excluding tax."
+      },
+      {
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "section": "3.1",
+        "chunk_id": "chk-920e9d59a63ae162f87c7a5f",
+        "source": "synthetic://policies/employee-expense",
+        "effective_date": "2026-02-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 2,
+        "excerpt": "An exception to the meal limit requires Finance Controller approval before the expense is incurred."
+      },
+      {
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "section": "4.1",
+        "chunk_id": "chk-bbc122e957cb95d043c6da7b",
+        "source": "synthetic://policies/employee-expense",
+        "effective_date": "2026-02-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 3,
+        "excerpt": "The domestic meal limit increased from USD 65 to USD 75."
+      },
+      {
+        "document_id": "expense-corporate-card",
+        "document_title": "Corporate Card Operating Standard",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-99b80ab71ef581db7d9e1faa",
+        "source": "synthetic://policies/expense-corporate-card",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 4,
+        "excerpt": "Domestic meal reimbursement remains USD 75 per employee per day under the Employee Expense Policy."
+      },
+      {
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "section": "2.2",
+        "chunk_id": "chk-d2af48de9899ad739714bec8",
+        "source": "synthetic://policies/employee-expense",
+        "effective_date": "2026-02-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 5,
+        "excerpt": "Domestic and international meal limits must not be combined for the same travel day."
+      }
+    ],
+    "latency_ms": 4.065,
+    "timings": {
+      "preprocessing_ms": 0.022,
+      "retrieval_ms": 3.098,
+      "reranking_ms": 0.104,
+      "context_ms": 0.031,
+      "generation_ms": 0.303,
+      "citation_verification_ms": 0.092,
+      "guardrails_ms": 0.126,
+      "request_ms": 4.053
+    },
+    "token_usage": {
+      "input_tokens": 761,
+      "output_tokens": 297,
+      "total_tokens": 1058,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "aa14c26f-6e54-4d92-a0f2-72adc9642602",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
         "threshold": 0.0,
         "passed": true,
         "status": "passed",
@@ -9071,12 +10877,228 @@
         "threshold": 0.0,
         "passed": true,
         "status": "passed",
-        "reason": "Unauthorizedument_title": "Trade Finance Procedures",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "false abstention",
+      "incomplete answer"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-024",
+    "category": "similar_policy",
+    "input": "Are a letter of credit approval threshold and aggregate treasury exposure threshold interchangeable?",
+    "expected_output": "No. Letter of credit amounts above USD 2,000,000 require Trade Finance Manager approval and use a separate threshold from aggregate treasury exposure.",
+    "actual_output": "The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds. [1]\n\nAggregate counterparty exposure above USD 10,000,000 exceeds the Level-2 treasury risk threshold. [2]\n\nA proposed treasury transaction causing aggregate counterparty exposure above USD 5,000,000 exceeds the Level-1 treasury risk threshold. [3]\n\nA letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance. [4]",
+    "user_role": "treasury",
+    "should_abstain": false,
+    "abstained": false,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
         "document_version": "2.0",
         "source": "synthetic://policies/trade-finance",
         "section": "4.2",
         "page": null,
-      _ms": 0.139,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance. The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds.",
+        "vector_score": 0.6197506830096351,
+        "keyword_score": 0.9540632445565995,
+        "score": 0.8036225918604656,
+        "reranker_score": 0.7696556479651164
+      },
+      {
+        "chunk_id": "chk-fdd494354552270a8520dbac",
+        "document_id": "treasury-risk",
+        "document_title": "Treasury Risk Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/treasury-risk",
+        "section": "4.3",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Aggregate counterparty exposure above USD 10,000,000 exceeds the Level-2 treasury risk threshold. In addition to Treasury Risk Manager written approval before execution, the Compliance Duty Officer must be notified before execution. Splitting transactions to avoid a threshold is prohibited.",
+        "vector_score": 0.43178776958837284,
+        "keyword_score": 0.6378027367264602,
+        "score": 0.5450960015143209,
+        "reranker_score": 0.5550240003785802
+      },
+      {
+        "chunk_id": "chk-49f4d1b6c0ff3dca46e7d660",
+        "document_id": "treasury-risk",
+        "document_title": "Treasury Risk Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/treasury-risk",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A proposed treasury transaction causing aggregate counterparty exposure above USD 5,000,000 exceeds the Level-1 treasury risk threshold. Treasury Operations must escalate to the Treasury Risk Manager and obtain written approval before execution. Exposure equal to USD 5,000,000 does not exceed Level-1.",
+        "vector_score": 0.37721676807715887,
+        "keyword_score": 0.6378027367264602,
+        "score": 0.5205390508342747,
+        "reranker_score": 0.5488847627085687
+      },
+      {
+        "chunk_id": "chk-f79db928f2f6c035cf2f230d",
+        "document_id": "treasury-risk",
+        "document_title": "Treasury Risk Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/treasury-risk",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Treasury exposure is measured as the gross aggregate unsettled exposure per counterparty in USD equivalent. Treasury Operations calculates the exposure before execution. Netting and collateral do not reduce this demonstration threshold.",
+        "vector_score": 0.458682472293863,
+        "keyword_score": 0.5196351813367303,
+        "score": 0.49220646226744,
+        "reranker_score": 0.46055161556686003
+      },
+      {
+        "chunk_id": "chk-15f746772af628a3922fd9ca",
+        "document_id": "treasury-risk",
+        "document_title": "Treasury Risk Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/treasury-risk",
+        "section": "5.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Treasury risk threshold approval records must be retained for seven years. The Treasury Risk Manager owns threshold exceptions. An exception requires Chief Risk Officer approval and expires after 30 calendar days.",
+        "vector_score": 0.3626203338114211,
+        "keyword_score": 0.3633163483505039,
+        "score": 0.3630031418079167,
+        "reranker_score": 0.3470007854519792
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
+        "document_version": "2.0",
+        "section": "4.2",
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "source": "synthetic://policies/trade-finance",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "citation_id": 1,
+        "excerpt": "The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds."
+      },
+      {
+        "document_id": "treasury-risk",
+        "document_title": "Treasury Risk Policy",
+        "document_version": "2.0",
+        "section": "4.3",
+        "chunk_id": "chk-fdd494354552270a8520dbac",
+        "source": "synthetic://policies/treasury-risk",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 2,
+        "excerpt": "Aggregate counterparty exposure above USD 10,000,000 exceeds the Level-2 treasury risk threshold."
+      },
+      {
+        "document_id": "treasury-risk",
+        "document_title": "Treasury Risk Policy",
+        "document_version": "2.0",
+        "section": "4.2",
+        "chunk_id": "chk-49f4d1b6c0ff3dca46e7d660",
+        "source": "synthetic://policies/treasury-risk",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 3,
+        "excerpt": "A proposed treasury transaction causing aggregate counterparty exposure above USD 5,000,000 exceeds the Level-1 treasury risk threshold."
+      },
+      {
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
+        "document_version": "2.0",
+        "section": "4.2",
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "source": "synthetic://policies/trade-finance",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "citation_id": 4,
+        "excerpt": "A letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance."
+      }
+    ],
+    "latency_ms": 5.02,
+    "timings": {
+      "preprocessing_ms": 0.027,
+      "retrieval_ms": 3.868,
+      "reranking_ms": 0.249,
+      "context_ms": 0.036,
+      "generation_ms": 0.32,
+      "citation_verification_ms": 0.09,
+      "guardrails_ms": 0.139,
       "request_ms": 5.007
     },
     "token_usage": {
@@ -9356,7 +11378,104 @@
       },
       {
         "document_id": "client-data",
-        "document_title": "Client Data Handport proxy, not semantic Faithfulness.",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "section": "4.1",
+        "chunk_id": "chk-11f50bcf9cbde9371857d376",
+        "source": "synthetic://policies/client-data",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 3,
+        "excerpt": "This retention period applies to identity evidence, not transient application diagnostic logs."
+      },
+      {
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "section": "4.2",
+        "chunk_id": "chk-8b9d67e2a7718bb4f4da52c7",
+        "source": "synthetic://policies/client-data",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 4,
+        "excerpt": "Client identity records retain the separate seven-year period after account closure."
+      }
+    ],
+    "latency_ms": 4.169,
+    "timings": {
+      "preprocessing_ms": 0.022,
+      "retrieval_ms": 3.163,
+      "reranking_ms": 0.147,
+      "context_ms": 0.031,
+      "generation_ms": 0.287,
+      "citation_verification_ms": 0.076,
+      "guardrails_ms": 0.125,
+      "request_ms": 4.157
+    },
+    "token_usage": {
+      "input_tokens": 751,
+      "output_tokens": 229,
+      "total_tokens": 980,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "193069ed-3d2b-48a6-b0bb-2dd4f7896f3a",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": 0.4,
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": 1.0,
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
         "eval_mode": "deterministic",
         "confidence": null,
         "score_breakdown": null
@@ -9444,7 +11563,16 @@
           "treasury"
         ],
         "effective_date": "2026-01-01",
-        "text": "A lost corporate card must be reported to the Corporate Card Administrator immediately and no later "document_title": "Corporate Card Operating Standard",
+        "text": "A lost corporate card must be reported to the Corporate Card Administrator immediately and no later than two hours after discovery. The Corporate Card Administrator requests card suspension.",
+        "vector_score": 0.7349684152591671,
+        "keyword_score": 1.0,
+        "score": 0.8807357868666252,
+        "reranker_score": 0.9201839467166564
+      },
+      {
+        "chunk_id": "chk-07f67e53b6f385777260bf08",
+        "document_id": "expense-corporate-card",
+        "document_title": "Corporate Card Operating Standard",
         "document_version": "2.0",
         "source": "synthetic://policies/expense-corporate-card",
         "section": "4.1",

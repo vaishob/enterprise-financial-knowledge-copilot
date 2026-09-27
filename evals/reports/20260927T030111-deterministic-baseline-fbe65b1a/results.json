@@ -8191,7 +8191,1265 @@
       },
       "proxy_section_recall": {
         "score": null,
-      ck_success_rate": {
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 0.0,
+        "threshold": 1.0,
+        "passed": false,
+        "status": "failed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [
+      "failure to abstain"
+    ],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-047",
+    "category": "rbac",
+    "input": "What liquidity coverage ratio triggers the liquidity contingency plan?",
+    "expected_output": "Abstain: compliance cannot access the liquidity playbook.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "compliance",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [],
+    "citations": [],
+    "latency_ms": 5.336,
+    "timings": {
+      "preprocessing_ms": 0.021,
+      "retrieval_ms": 5.013,
+      "reranking_ms": 0.01,
+      "context_ms": 0.005,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.003,
+      "request_ms": 5.323
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "609b8ab7-3c39-43d6-999c-9dc3b7c25d5a",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-048",
+    "category": "rbac",
+    "input": "Who approves high-impact AI models before production deployment?",
+    "expected_output": "Abstain: treasury cannot access restricted model governance.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "treasury",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-bd3ef0afaf538bda2b4418b9",
+        "document_id": "information-security",
+        "document_title": "Information Security Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/information-security",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Confidential information must use approved encrypted storage and TLS 1.2 or later in transit. Personal email accounts and public file-sharing sites are not approved channels for client information.",
+        "vector_score": 0.23145502494313785,
+        "keyword_score": 0.14414800263832522,
+        "score": 0.23145502494313785,
+        "reranker_score": 0.15072089909292732
+      },
+      {
+        "chunk_id": "chk-920e9d59a63ae162f87c7a5f",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "3.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "Employees must submit expense claims within 30 calendar days after the expense date. The Line Manager approves ordinary claims. An exception to the meal limit requires Finance Controller approval before the expense is incurred.",
+        "vector_score": 0.1729171253112705,
+        "keyword_score": 0.14414800263832522,
+        "score": 0.1729171253112705,
+        "reranker_score": 0.13608642418496047
+      },
+      {
+        "chunk_id": "chk-8b9d67e2a7718bb4f4da52c7",
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/client-data",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Application diagnostic logs containing no client identity records are retained for 30 calendar days. Access to diagnostic logs is restricted to authorized support staff. Client identity records retain the separate seven-year period after account closure.",
+        "vector_score": 0.16718346377260587,
+        "keyword_score": 0.0,
+        "score": 0.16718346377260587,
+        "reranker_score": 0.04179586594315147
+      }
+    ],
+    "citations": [],
+    "latency_ms": 5.998,
+    "timings": {
+      "preprocessing_ms": 0.022,
+      "retrieval_ms": 5.165,
+      "reranking_ms": 0.272,
+      "context_ms": 0.06,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.115,
+      "request_ms": 5.981
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "d0663d9c-b3d8-47ac-b9bd-d59365e8692c",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-051",
+    "category": "ambiguous",
+    "input": "What is the threshold?",
+    "expected_output": "Abstain or request the policy and threshold type.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "analyst",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
+        "document_version": "2.0",
+        "source": "synthetic://policies/trade-finance",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance. The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds.",
+        "vector_score": 0.31622776601683794,
+        "keyword_score": 1.0,
+        "score": 0.31622776601683794,
+        "reranker_score": 0.7290569415042095
+      }
+    ],
+    "citations": [],
+    "latency_ms": 5.12,
+    "timings": {
+      "preprocessing_ms": 0.035,
+      "retrieval_ms": 4.338,
+      "reranking_ms": 0.028,
+      "context_ms": 0.012,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.005,
+      "request_ms": 5.092
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "33b8ca32-1478-4685-a859-4af7581c06c6",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-052",
+    "category": "ambiguous",
+    "input": "Who approves it?",
+    "expected_output": "Abstain or ask what approval is meant.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "analyst",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-999baf932995e3821dc8e8f0",
+        "document_id": "payment-operations",
+        "document_title": "Payment Operations Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/payment-operations",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Manual payment instructions above USD 100,000 require dual approval by two distinct authorized Payment Operations Officers. Treasury counterparty exposure approval does not replace payment dual approval.",
+        "vector_score": 0.4120816918460671,
+        "keyword_score": 1.0,
+        "score": 0.4120816918460671,
+        "reranker_score": 0.7530204229615168
+      },
+      {
+        "chunk_id": "chk-bd3ef0afaf538bda2b4418b9",
+        "document_id": "information-security",
+        "document_title": "Information Security Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/information-security",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Confidential information must use approved encrypted storage and TLS 1.2 or later in transit. Personal email accounts and public file-sharing sites are not approved channels for client information.",
+        "vector_score": 0.4082482904638631,
+        "keyword_score": 1.0,
+        "score": 0.4082482904638631,
+        "reranker_score": 0.7520620726159658
+      },
+      {
+        "chunk_id": "chk-11f50bcf9cbde9371857d376",
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/client-data",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Client onboarding identity records are retained for seven years after account closure. This retention period applies to identity evidence, not transient application diagnostic logs.",
+        "vector_score": 0.37796447300922725,
+        "keyword_score": 0.0,
+        "score": 0.37796447300922725,
+        "reranker_score": 0.09449111825230681
+      },
+      {
+        "chunk_id": "chk-21f3befeffb392cf7ea69600",
+        "document_id": "trade-finance",
+        "document_title": "Trade Finance Procedures",
+        "document_version": "2.0",
+        "source": "synthetic://policies/trade-finance",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A letter of credit amount above USD 2,000,000 requires Trade Finance Manager approval before issuance. The letter of credit approval threshold is separate from aggregate treasury counterparty exposure thresholds.",
+        "vector_score": 0.31622776601683794,
+        "keyword_score": 1.0,
+        "score": 0.31622776601683794,
+        "reranker_score": 0.7290569415042095
+      },
+      {
+        "chunk_id": "chk-920e9d59a63ae162f87c7a5f",
+        "document_id": "employee-expense",
+        "document_title": "Employee Expense Policy",
+        "document_version": "2.0",
+        "source": "synthetic://policies/employee-expense",
+        "section": "3.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-02-01",
+        "text": "Employees must submit expense claims within 30 calendar days after the expense date. The Line Manager approves ordinary claims. An exception to the meal limit requires Finance Controller approval before the expense is incurred.",
+        "vector_score": 0.30499714066520933,
+        "keyword_score": 1.0,
+        "score": 0.30499714066520933,
+        "reranker_score": 0.7262492851663024
+      },
+      {
+        "chunk_id": "chk-8b9d67e2a7718bb4f4da52c7",
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/client-data",
+        "section": "4.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Application diagnostic logs containing no client identity records are retained for 30 calendar days. Access to diagnostic logs is restricted to authorized support staff. Client identity records retain the separate seven-year period after account closure.",
+        "vector_score": 0.29488391230979427,
+        "keyword_score": 0.0,
+        "score": 0.29488391230979427,
+        "reranker_score": 0.07372097807744857
+      },
+      {
+        "chunk_id": "chk-90d92d41f690384a2668065c",
+        "document_id": "client-data",
+        "document_title": "Client Data Handling Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/client-data",
+        "section": "3.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "Approved client-data transfers require documented business purpose, recipient authorization and encryption. The Data Protection Officer approves cross-border client-data transfers before data leaves the originating jurisdiction.",
+        "vector_score": 0.26490647141300877,
+        "keyword_score": 1.0,
+        "score": 0.26490647141300877,
+        "reranker_score": 0.7162266178532523
+      },
+      {
+        "chunk_id": "chk-58b05ad1561fda50757b85ca",
+        "document_id": "operational-risk",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "For a Level-2 treasury exposure above USD 10,000,000, notify the Compliance Duty Officer before execution and create an operational risk incident record within one business day. The incident record supplements the Treasury Risk Manager approval; it does not replace pre-execution approval.",
+        "vector_score": 0.24433888871261045,
+        "keyword_score": 1.0,
+        "score": 0.24433888871261045,
+        "reranker_score": 0.7110847221781527
+      }
+    ],
+    "citations": [],
+    "latency_ms": 3.673,
+    "timings": {
+      "preprocessing_ms": 0.012,
+      "retrieval_ms": 3.197,
+      "reranking_ms": 0.126,
+      "context_ms": 0.047,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.006,
+      "request_ms": 3.66
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "0bd971e9-8fbb-4b5f-a16f-575e5d6414f2",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-053",
+    "category": "ambiguous",
+    "input": "How long should we retain it?",
+    "expected_output": "Abstain or ask for the record type.",
+    "actual_output": "I couldn't find sufficient evidence in the authorized knowledge base to answer this reliably.",
+    "user_role": "analyst",
+    "should_abstain": true,
+    "abstained": true,
+    "retrieval_context": [],
+    "citations": [],
+    "latency_ms": 3.537,
+    "timings": {
+      "preprocessing_ms": 0.015,
+      "retrieval_ms": 3.217,
+      "reranking_ms": 0.01,
+      "context_ms": 0.005,
+      "generation_ms": 0.0,
+      "citation_verification_ms": 0.0,
+      "guardrails_ms": 0.004,
+      "request_ms": 3.525
+    },
+    "token_usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "3aa63543-fb14-4c55-b5ec-dc411cdb42dd",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "insufficient_evidence"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": null,
+        "threshold": 0.75,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": null,
+        "threshold": 0.8,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": null,
+        "threshold": 0.85,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": null,
+        "threshold": 0.7,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
+        "score": null,
+        "threshold": 0.0,
+        "passed": null,
+        "status": "skipped",
+        "reason": "Known-attack outcome based on unauthorized content, forbidden markers, and required rejection.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      }
+    },
+    "failures": [],
+    "repeat": 1
+  },
+  {
+    "case_id": "fin-056",
+    "category": "conflicting_version",
+    "input": "Must a 40-minute critical service outage be escalated even though the recovery objective is two hours?",
+    "expected_output": "Yes. An outage exceeding 30 minutes requires Severity-1 escalation even if the two-hour recovery objective has not been breached.",
+    "actual_output": "A critical service outage exceeding 30 minutes requires Severity-1 operational incident escalation, even when the two-hour recovery time objective has not yet been breached. [1]\n\nThe critical payments service recovery time objective is two hours. [2]",
+    "user_role": "analyst",
+    "should_abstain": false,
+    "abstained": false,
+    "retrieval_context": [
+      {
+        "chunk_id": "chk-19a57ae3e2412464b3a61814",
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/business-continuity",
+        "section": "4.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A critical service outage exceeding 30 minutes requires Severity-1 operational incident escalation, even when the two-hour recovery time objective has not yet been breached.",
+        "vector_score": 0.6019292654288461,
+        "keyword_score": 0.9410469271833224,
+        "score": 0.6019292654288461,
+        "reranker_score": 0.6921489830238783
+      },
+      {
+        "chunk_id": "chk-51d2f14b94f3b76828f3d9e7",
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "source": "synthetic://policies/business-continuity",
+        "section": "2.1",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "The critical payments service recovery time objective is two hours. Its recovery point objective is 15 minutes. The Business Continuity Manager coordinates restoration exercises.",
+        "vector_score": 0.4824506406770077,
+        "keyword_score": 0.6374445751035637,
+        "score": 0.4824506406770077,
+        "reranker_score": 0.49977932683591864
+      },
+      {
+        "chunk_id": "chk-0cf23691ec7c15bc7469d54b",
+        "document_id": "operational-risk",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.2",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A Severity-1 operational incident involves a critical service outage exceeding 30 minutes or suspected unauthorized disclosure of client data. Employees must notify the Operational Risk Duty Manager within 15 minutes of identifying a Severity-1 incident.",
+        "vector_score": 0.24253562503633297,
+        "keyword_score": 0.45555861381954627,
+        "score": 0.24253562503633297,
+        "reranker_score": 0.2856339062590833
+      },
+      {
+        "chunk_id": "chk-12f26366254b987dcde1f7a6",
+        "document_id": "operational-risk",
+        "document_title": "Operational Risk Escalation Procedure",
+        "document_version": "2.0",
+        "source": "synthetic://policies/operational-risk",
+        "section": "7.3",
+        "page": null,
+        "classification": "internal",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "effective_date": "2026-01-01",
+        "text": "A Severity-2 operational incident affects a non-critical service without suspected client data disclosure. Notify the Operational Risk Duty Manager within four business hours. Severity-2 incident reporting is distinct from Level-2 treasury exposure escalation.",
+        "vector_score": 0.20412414523193148,
+        "keyword_score": 0.3345465448231161,
+        "score": 0.20412414523193148,
+        "reranker_score": 0.2760310363079829
+      }
+    ],
+    "citations": [
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "4.1",
+        "chunk_id": "chk-19a57ae3e2412464b3a61814",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 1,
+        "excerpt": "A critical service outage exceeding 30 minutes requires Severity-1 operational incident escalation, even when the two-hour recovery time objective has not yet been breached."
+      },
+      {
+        "document_id": "business-continuity",
+        "document_title": "Business Continuity Standard",
+        "document_version": "2.0",
+        "section": "2.1",
+        "chunk_id": "chk-51d2f14b94f3b76828f3d9e7",
+        "source": "synthetic://policies/business-continuity",
+        "effective_date": "2026-01-01",
+        "allowed_roles": [
+          "admin",
+          "analyst",
+          "compliance",
+          "risk_manager",
+          "treasury"
+        ],
+        "citation_id": 2,
+        "excerpt": "The critical payments service recovery time objective is two hours."
+      }
+    ],
+    "latency_ms": 4.202,
+    "timings": {
+      "preprocessing_ms": 0.028,
+      "retrieval_ms": 3.282,
+      "reranking_ms": 0.109,
+      "context_ms": 0.029,
+      "generation_ms": 0.276,
+      "citation_verification_ms": 0.056,
+      "guardrails_ms": 0.115,
+      "request_ms": 4.19
+    },
+    "token_usage": {
+      "input_tokens": 669,
+      "output_tokens": 147,
+      "total_tokens": 816,
+      "estimated": true,
+      "estimated_cost_usd": 0.0
+    },
+    "trace_id": "4d70fba2-7a6e-445b-99c4-61a9a7048c43",
+    "guardrail_decisions": [
+      "authorization_before_retrieval",
+      "quarantined_content_excluded",
+      "active_versions_only",
+      "bounded_context",
+      "exact_quote_citations_verified"
+    ],
+    "metrics": {
+      "pipeline_error_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "A fail-closed pipeline error is a failed evaluation, never a valid abstention.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_context_precision": {
+        "score": 0.25,
+        "threshold": 0.75,
+        "passed": false,
+        "status": "failed",
+        "reason": "Fraction of supplied chunks matching gold document+section; lexical/metadata diagnostic, not DeepEval Contextual Precision.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_section_recall": {
+        "score": 1.0,
+        "threshold": 0.8,
+        "passed": true,
+        "status": "passed",
+        "reason": "Fraction of gold sections present in supplied context; does not judge semantic sufficiency.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_claim_support": {
+        "score": 1.0,
+        "threshold": 0.85,
+        "passed": true,
+        "status": "passed",
+        "reason": "Exact normalized sentence containment in context; extractive support proxy, not semantic Faithfulness.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "proxy_answer_overlap": {
+        "score": 0.8947368421052632,
+        "threshold": 0.7,
+        "passed": true,
+        "status": "passed",
+        "reason": "Reference-answer token recall; cannot detect contradiction or paraphrase equivalence.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "citation_integrity": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "All cited chunk IDs were supplied, markers map to citations, and non-abstentions carry a citation.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "abstention_accuracy": {
+        "score": 1.0,
+        "threshold": 1.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Actual abstention compared with curated expected behavior.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "rbac_leakage_rate": {
+        "score": 0.0,
+        "threshold": 0.0,
+        "passed": true,
+        "status": "passed",
+        "reason": "Unauthorized metadata IDs=[]; copied restricted span=False.",
+        "eval_mode": "deterministic",
+        "confidence": null,
+        "score_breakdown": null
+      },
+      "attack_success_rate": {
         "score": null,
         "threshold": 0.0,
         "passed": null,
