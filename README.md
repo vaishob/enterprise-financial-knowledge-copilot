@@ -4,6 +4,10 @@ A working portfolio implementation of an internal financial-policy RAG platform:
 
 > All documents and organizations represented in the demo dataset are synthetic and are not official policies of any financial institution.
 
+## Live Demo
+
+[Open the deployed application](https://enterprise-financial-knowledge-copi-delta.vercel.app). The hosted version uses synthetic demonstration data.
+
 This is an engineering demonstration, not a certified banking application. The credential-free profile uses hash embeddings and sentence extraction so pipeline and security behavior can run without a model provider. Hosted-model quality requires separate evaluation.
 
 ## Problem and architecture
